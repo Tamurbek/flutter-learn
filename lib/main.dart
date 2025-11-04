@@ -24,13 +24,35 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flutter Map'),
-          centerTitle: false,
-          leading: Icon(Icons.login),
-          actions: [
-            Text('Flutter App'),
-            Icon(Icons.login)
+          centerTitle: true,
+        ),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: (){},
+              child: Icon(Icons.add),
+            ),
+            SizedBox(height: 10.0,),
+            FloatingActionButton(
+              onPressed: (){},
+              child: Icon(Icons.add),
+            ),
           ],
-          backgroundColor: Colors.teal,
+        ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Home'
+            ),
+            NavigationDestination(
+                icon: Icon(Icons.person),
+                label: 'Profile'
+            )
+          ],
+          onDestinationSelected: (int value){},
+          selectedIndex: 1,
         ),
       ),
     );
